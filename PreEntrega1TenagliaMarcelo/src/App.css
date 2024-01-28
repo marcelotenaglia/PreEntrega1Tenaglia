@@ -1,0 +1,28 @@
+.principal-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+nav {
+  display:flex;
+  align-items: center;
+  padding-left: 25px;
+  
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-top: 0px;
+}
+
+
+
+.greetings {
+  display: flex;
+  font-size: 50px;
+  
+}
