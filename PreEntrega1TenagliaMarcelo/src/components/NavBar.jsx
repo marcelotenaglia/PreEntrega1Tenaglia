@@ -1,12 +1,12 @@
 import CartWidget from "./CartWidget"
 
-function NavBar ({img, name, inicio, muebles, blanqueria, camping}) {
+function NavBar ({img, inicio, muebles, blanqueria, camping}) {
 
 return (
 
  <>   
-  <nav> 
-    <div> <img src={img}/> {name} </div>
+  <nav class="nav"> 
+    <div class="logo"> <img src={img}/><div class="name">Muebleria Rollan</div></div>
     <button> {inicio} </button>
     <button> {muebles} </button>
     <button> {blanqueria} </button>

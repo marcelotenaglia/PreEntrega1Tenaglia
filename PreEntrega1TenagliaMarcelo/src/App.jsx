@@ -13,7 +13,7 @@ function App() {
     <>
       <div class="principal-container"> 
  
-        <NavBar img={Logo} name="Muebleria Rollan" inicio="Inicio" muebles="Muebles" blanqueria="Blanqueria" camping="Camping"/>
+        <NavBar img={Logo} inicio="Inicio" muebles="Muebles" blanqueria="Blanqueria" camping="Camping"/>
         <ItemListContainer greetings="Bienvenidos"/>        
 
       </div>
