@@ -35,3 +35,11 @@ export const getProduct = () => {
     }, 200);
   });
 };
+
+export const getProductById = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(products.find((prod) => prod.id === productId));
+    }, 200);
+  });
+};

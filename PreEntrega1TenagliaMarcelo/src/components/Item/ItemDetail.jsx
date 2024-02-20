@@ -1,6 +1,7 @@
-import "./Item.css";
+import "./ItemDetail.css";
+import Counter from "../Counter/Counter";
 
-const Item = ({ id, name, precio, img, stock }) => {
+const ItemDetail = ({ id, name, precio, img, stock }) => {
   return (
     <article>
       <header>
@@ -14,10 +15,14 @@ const Item = ({ id, name, precio, img, stock }) => {
         <p>stock disponible: {stock}</p>
       </section>
       <footer>
-        <button>Ver detalles</button>
+        <Counter
+          initial={1}
+          stock={10}
+          onAdd={(cantidad) => console.log("cantidad agregada:", cantidad)}
+        />
       </footer>
     </article>
   );
 };
 
-export default Item;
+export default ItemDetail;
