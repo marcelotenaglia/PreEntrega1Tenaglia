@@ -1,18 +1,19 @@
 import CartWidget from "./CartWidget";
 import "./NavBar.css";
+import Logo from "./LogoMuebleria.png";
 
-function NavBar({ img, inicio, muebles, blanqueria, camping }) {
+function NavBar() {
   return (
     <>
       <nav className="navbar">
         <div className="logo">
-          <img src={img} />
-          <div>Muebleria Rollan</div>
+          <img src={Logo} />
+          <p>Muebleria Rollan</p>
         </div>
-        <a className="button is-link is-light"> {inicio} </a>
-        <a className="button is-link is-light"> {muebles} </a>
-        <a className="button is-link is-light"> {blanqueria} </a>
-        <a className="button is-link is-light"> {camping} </a>
+        <a className="button is-link is-light"> inicio </a>
+        <a className="button is-link is-light"> muebles </a>
+        <a className="button is-link is-light"> blanqueria </a>
+        <a className="button is-link is-light"> camping </a>
         <CartWidget />
       </nav>
     </>
