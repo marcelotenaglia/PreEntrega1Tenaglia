@@ -1,11 +1,10 @@
-import ItemListContainer from "../ItemListContainer";
 import "./ItemList.css";
-import Item from "../Item/ItemDetail";
+import Item from "../ItemDetail/ItemDetail";
 
-const ItemList = ({ product }) => {
+const ItemList = ({ products }) => {
   return (
-    <div className="ListGroup">
-      {product.map((prod) => (
+    <div>
+      {products.map((prod) => (
         <Item key={prod.id} {...prod} />
       ))}
     </div>

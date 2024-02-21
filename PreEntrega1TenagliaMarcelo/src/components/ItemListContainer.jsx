@@ -1,19 +1,24 @@
 import { useState, useEffect } from "react";
-import { getProduct } from "./Catalogo";
+import { getProducts, getProductByCategory } from "./Catalogo";
 import ItemList from "./ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greetings }) => {
   const [products, setProducts] = useState([]);
 
+  const { categoriaId } = useParams();
+
   useEffect(() => {
-    getProduct()
+    const asyncFunc = categoriaId ? getProductByCategory : getProducts;
+
+    asyncFunc(categoriaId)
       .then((response) => {
         setProducts(response);
       })
       .catch((error) => {
-        console.error(error);
+        console.log(error);
       });
-  }, []);
+  }, [categoriaId]);
 
   return (
     <div>
