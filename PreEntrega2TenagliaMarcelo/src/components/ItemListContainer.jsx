@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import { getProducts, getProductByCategory } from "./Catalogo";
 import ItemList from "./ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import "./ItemListContainer.css";
 
-const ItemListContainer = ({ greetings }) => {
+const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   const { categoriaId } = useParams();
 
   useEffect(() => {
-    const asyncFunc = categoriaId ? getProductByCategory : getProducts ;
+    const asyncFunc = categoriaId ? getProductByCategory : getProducts;
 
     asyncFunc(categoriaId)
       .then((response) => {
@@ -21,8 +22,7 @@ const ItemListContainer = ({ greetings }) => {
   }, [categoriaId]);
 
   return (
-    <div>
-      <h1>{greetings}</h1>
+    <div className="galeria">
       <ItemList products={products} />
     </div>
   );

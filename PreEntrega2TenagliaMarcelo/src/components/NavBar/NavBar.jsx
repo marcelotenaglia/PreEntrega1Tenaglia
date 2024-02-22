@@ -15,10 +15,6 @@ function NavBar() {
             <p>Muebleria Rollan</p>
           </Link>
         </div>
-        <NavLink to={`/`} className="button is-link is-light">
-          {" "}
-          inicio{" "}
-        </NavLink>
         <NavLink to={`/categoria/muebles`} className="button is-link is-light">
           {" "}
           muebles{" "}
