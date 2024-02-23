@@ -80,7 +80,7 @@ export const getProductById = (productId) => {
 export const getProductByCategory = (categoriaId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(products.find((prod) => prod.categoria == categoriaId));
+      resolve(products.filter((prod) => prod.categoria == categoriaId));
     }, 200);
   });
 };

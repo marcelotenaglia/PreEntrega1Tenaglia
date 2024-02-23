@@ -1,28 +1,19 @@
 import "./ItemDetail.css";
 import Counter from "../Counter/Counter";
 
-const ItemDetail = ({
-  id,
-  name,
-  imagen,
-  categoria,
-  descripcion,
-  precio,
-  stock,
-}) => {
+const ItemDetail = ({ name, imagen, categoria, descripcion, precio }) => {
   return (
     <article>
       <header>
-        <h2>{name}</h2>
+        <h1>{name}</h1>
       </header>
       <picture>
         <img src={imagen} alt={name} />
       </picture>
       <section>
         <p>categoria: {categoria}</p>
-        <p>precio: ${precio}</p>
         <p>descripcion: {descripcion}</p>
-        <p>stock disponible: {stock}</p>
+        <p>precio: ${precio}</p>
       </section>
       <footer>
         <Counter

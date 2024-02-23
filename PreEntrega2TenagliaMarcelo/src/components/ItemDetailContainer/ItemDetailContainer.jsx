@@ -1,8 +1,8 @@
 import "./ItemDetailContainer.css";
 import { useState, useEffect } from "react";
 import { getProductById } from "../Catalogo";
-import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
@@ -20,8 +20,8 @@ const ItemDetailContainer = () => {
   }, [itemId]);
 
   return (
-    <div>
-      <ItemDetail {...product} />
+    <div className="itemDetailContainer">
+      {product && <ItemDetail {...product} />}
     </div>
   );
 };

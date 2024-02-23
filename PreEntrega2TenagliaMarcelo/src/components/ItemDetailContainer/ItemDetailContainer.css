@@ -1,0 +1,11 @@
+.itemDetailContainer {
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 20%;
+        height: 50%;
+        text-align: center;
+        margin-left: 40%;
+    
+}

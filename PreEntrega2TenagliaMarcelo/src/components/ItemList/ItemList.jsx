@@ -1,5 +1,5 @@
 import "./ItemList.css";
-import Item from "../ItemDetail/ItemDetail";
+import Item from "../Item/Item";
 
 const ItemList = ({ products }) => {
   return (
