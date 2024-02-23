@@ -1,7 +1,14 @@
 import "./ItemDetail.css";
 import Counter from "../Counter/Counter";
 
-const ItemDetail = ({ name, imagen, categoria, descripcion, precio }) => {
+const ItemDetail = ({
+  name,
+  imagen,
+  categoria,
+  descripcion,
+  precio,
+  stock,
+}) => {
   return (
     <article>
       <header>
@@ -18,7 +25,7 @@ const ItemDetail = ({ name, imagen, categoria, descripcion, precio }) => {
       <footer>
         <Counter
           initial={1}
-          stock={10}
+          stock={stock}
           onAdd={(cantidad) => console.log("cantidad agregada:", cantidad)}
         />
       </footer>
