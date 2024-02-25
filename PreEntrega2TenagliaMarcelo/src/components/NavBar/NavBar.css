@@ -7,5 +7,13 @@
 
 .logo {
     display: flex;
+    align-items:center;
+}
+
+.texto {
+    display: flex;
+    text-align: center;
+    justify-content: center;
     align-items: center;
+    padding-bottom: 17.5%;
 }

@@ -1,7 +1,7 @@
 const products = [
   {
     id: "1",
-    name: "cama",
+    name: "CAMA",
     precio: "50000",
     categoria: "muebles",
     imagen:
@@ -11,7 +11,7 @@ const products = [
   },
   {
     id: "2",
-    name: "sabana blanca lisa",
+    name: "SABANA BLANCA LISA",
     precio: "65000",
     categoria: "blanqueria",
     imagen:
@@ -21,7 +21,7 @@ const products = [
   },
   {
     id: "3",
-    name: "carpa iglu",
+    name: "CARPA IGLU",
     precio: "88000",
     categoria: "camping",
     imagen:
@@ -31,7 +31,7 @@ const products = [
   },
   {
     id: "4",
-    name: "Bahiut",
+    name: "BAHIUT",
     precio: "124000",
     categoria: "muebles",
     imagen:
@@ -41,7 +41,7 @@ const products = [
   },
   {
     id: "5",
-    name: "acolchado liso",
+    name: "ACOLCHADO LISO",
     precio: "110000",
     categoria: "blanqueria",
     imagen:
@@ -51,7 +51,7 @@ const products = [
   },
   {
     id: "6",
-    name: "blosa de dormir",
+    name: "BOLSA DE DORMIR",
     precio: "23000",
     categoria: "camping",
     imagen:

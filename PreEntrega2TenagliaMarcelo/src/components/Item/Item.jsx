@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Item = ({ id, name, imagen, precio, stock }) => {
   return (
-    <div>
-      <article>
+    <div className="item">
+      <article className="article">
         <header>
           <h2 className="title">{name}</h2>
         </header>
@@ -12,8 +12,8 @@ const Item = ({ id, name, imagen, precio, stock }) => {
           <img src={imagen} alt={name} />
         </picture>
         <section>
-          <p>${precio}</p>
-          <p>{stock} unidades disponibles</p>
+          <p className="precio">${precio}</p>
+          <p className="stock">{stock} unidades disponibles</p>
         </section>
         <footer>
           <button>

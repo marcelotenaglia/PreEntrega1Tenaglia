@@ -9,10 +9,10 @@ function NavBar() {
       <nav className="navbar">
         <div className="logo">
           <Link to="/">
-            <img src={Logo} />
+            <img className="logo-mueble" src={Logo} />
           </Link>
           <Link to="/">
-            <p>Muebleria Rollan</p>
+            <p className="texto">Muebleria Rollan</p>
           </Link>
         </div>
         <NavLink to={`/categoria/muebles`} className="button is-link is-light">
