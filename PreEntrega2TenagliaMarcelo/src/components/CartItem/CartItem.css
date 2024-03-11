@@ -1,0 +1,23 @@
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: blueviolet;
+}
+
+.title {
+    margin-top: 25px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cantidad, .title, .price, .subtotal {
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: beige;
+}
