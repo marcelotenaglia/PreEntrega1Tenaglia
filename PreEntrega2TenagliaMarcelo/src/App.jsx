@@ -9,6 +9,7 @@ import "bulma/css/bulma.css";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./context/CartContext";
 import { Cart } from "./components/Cart/Cart";
+import { CheckoutForm } from "./components/CheckoutForm/CheckoutForm";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               />
               <Route path="/item/:itemId" element={<ItemDetailContainer />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkoutForm" element={<CheckoutForm />} />
               <Route path="*" element={<h1>Error 404 not found</h1>} />
             </Routes>
           </CartProvider>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CheckoutForm = ({ onConfirm }) => {
+export const CheckoutForm = ({ onConfirm }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");

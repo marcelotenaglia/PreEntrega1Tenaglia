@@ -15,3 +15,16 @@ export const CartItem = ({ item }) => {
     </div>
   );
 };
+
+// export const CartItem = ({ item }) => {
+//   const removeItem = useContext(CartContext);
+
+//   return (
+//     <div>
+//       <h2>{item.name}</h2>
+//       <p>cantidad: {item.quantity}</p>
+//       <p>subtotal: {item.quantity * item.price}</p>
+//       <button onClick={() => removeItem(item.id)}> eliminar </button>
+//     </div>
+//   );
+// };
