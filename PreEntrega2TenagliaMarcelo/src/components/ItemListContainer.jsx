@@ -1,23 +1,36 @@
 import { useState, useEffect } from "react";
-import { getProducts, getProductByCategory } from "./Catalogo";
 import ItemList from "./ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "../service/firebase/firebaseConfig";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const { categoriaId } = useParams();
 
   useEffect(() => {
-    const asyncFunc = categoriaId ? getProductByCategory : getProducts;
+    setLoading(true);
 
-    asyncFunc(categoriaId)
+    const collectionRef = categoriaId
+      ? query(collection(db, "products"), where("categoria", "==", categoriaId))
+      : collection(db, "products");
+
+    getDocs(collectionRef)
       .then((response) => {
-        setProducts(response);
+        const productsAdapted = response.docs.map((doc) => {
+          const data = doc.data();
+          return { id: doc.id, ...data };
+        });
+        setProducts(productsAdapted);
       })
       .catch((error) => {
-        console.log(error);
+        console.log("error");
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [categoriaId]);
 
@@ -29,3 +42,12 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
+
+// asyncFunc(categoriaId)
+//       .then((response) => {
+//         setProducts(response);
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   }, [categoriaId]);
