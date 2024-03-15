@@ -1,50 +1,84 @@
 import { useState } from "react";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../service/firebase/firebaseConfig";
+import { Formik, Form, Field } from "formik";
 
-export const CheckoutForm = ({ onConfirm }) => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+const CheckoutForm = () => {
+  const { cart, total, clearCart } = useContext(CartContext);
 
-  const handleConfirm = (e) => {
-    e.preventDefault();
+  const [orderId, setOrderId] = useState("");
 
-    const userData = {
-      name,
-      phone,
-      email,
+  const comprar = (data) => {
+    const order = {
+      cliente: data,
+      products: cart,
+      total: total,
     };
 
-    onConfirm(userData);
+    const orderRef = collection(db, "orders");
+
+    addDoc(orderRef, order).then((doc) => {
+      setOrderId(doc.id);
+      clearCart();
+    });
+  };
+
+  if (orderId) {
+    return (
+      <div className="OrdenGenerada">
+        <h1 className="OrdenGeneradah1"> Muchas gracias por tu compra </h1>
+        <p className=""> Numero de pedido es : {orderId} </p>
+      </div>
+    );
+  }
+  const validateEmail = (value) => {
+    let error;
+    if (!value) {
+      error = "El correo electrónico es obligatorio";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+      error = "Correo electrónico inválido";
+    }
+    return error;
   };
 
   return (
-    <div>
-      <form onSubmit={handleConfirm}>
-        <label>
-          Nombre:{" "}
-          <input
-            type="text"
-            value={name}
-            onChange={({ target }) => setName(target.value)}
-          />
-        </label>
-        <label>
-          Telefono:{" "}
-          <input
-            type="text"
-            value={phone}
-            onChange={({ target }) => setPhone(target.value)}
-          />
-        </label>
-        <label>
-          Email:{" "}
-          <input
-            type="text"
-            value={email}
-            onChange={({ target }) => setEmail(target.value)}
-          />
-        </label>
-      </form>
+    <div className="ContainerCheck">
+      <div className="H1 Check">
+        <h1 className="CheckoutH1"> Checkout </h1>
+      </div>
+      <Formik
+        initialValues={{ nombre: "", telefono: "", email: "" }}
+        onSubmit={(values) => comprar(values)}
+      >
+        <Form className="FromCheck">
+          <label className="LabelCheck">
+            Nombre
+            <Field className="InputCheck" type="text" name="nombre" />
+          </label>
+          <label className="LabelCheck">
+            Telefono
+            <Field className="InputCheck" type="text" name="telefono" />
+          </label>
+          <label className="LabelCheck">
+            Email
+            <Field
+              className="InputCheck"
+              type="email"
+              name="email"
+              validate={validateEmail}
+            />
+          </label>
+          <div className="LabelCheck">
+            <button type="submit" className="ButtonCheck">
+              Generar orden
+            </button>
+          </div>
+        </Form>
+      </Formik>
     </div>
   );
 };
+
+export default CheckoutForm;

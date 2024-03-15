@@ -9,7 +9,7 @@ import "bulma/css/bulma.css";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./context/CartContext";
 import { Cart } from "./components/Cart/Cart";
-import { CheckoutForm } from "./components/CheckoutForm/CheckoutForm";
+import CheckoutForm from "./components/CheckoutForm/CheckoutForm";
 
 function App() {
   return (

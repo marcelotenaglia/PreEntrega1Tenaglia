@@ -30,7 +30,9 @@ function NavBar() {
           {" "}
           camping{" "}
         </NavLink>
-        <CartWidget />
+        <div className="cart-widget">
+          <CartWidget />
+        </div>
       </nav>
     </>
   );

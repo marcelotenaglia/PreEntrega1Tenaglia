@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const CartContext = createContext({
+const CartContext = createContext({
   cart: [],
 });
 
@@ -28,9 +28,17 @@ export const CartProvider = ({ children }) => {
     cart.some((prod) => prod.id === itemId);
   };
 
+  const total = cart.reduce((acumulado, item) => {
+    return acumulado + item.cantidad * item.precio;
+  }, 0);
+
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>
+    <CartContext.Provider
+      value={{ cart, addItem, removeItem, clearCart, total }}
+    >
       {children}
     </CartContext.Provider>
   );
 };
+
+export default CartContext;

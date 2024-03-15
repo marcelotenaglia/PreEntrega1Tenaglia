@@ -1,15 +1,11 @@
 import "./Cart.css";
 import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { CartItem } from "../CartItem/CartItem";
 
 export const Cart = () => {
-  const { cart, clearCart, totalQuantity } = useContext(CartContext);
-
-  const total = cart.reduce((acumulado, item) => {
-    return acumulado + item.cantidad * item.precio;
-  }, 0);
+  const { cart, clearCart, totalQuantity, total } = useContext(CartContext);
 
   if (totalQuantity === 0) {
     return (
@@ -29,7 +25,7 @@ export const Cart = () => {
       ))}
       <h3>Total: ${total}</h3>
       <button onClick={() => clearCart()}>Limpiar carrito</button>
-      <Link to="/checkout" className="Option">
+      <Link to="/checkoutForm" className="Option">
         Checkout
       </Link>
     </div>

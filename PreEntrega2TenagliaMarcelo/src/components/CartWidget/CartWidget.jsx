@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FaCartPlus } from "react-icons/fa";
-import { CartContext } from "../../context/CartContext";
+import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartWidget = () => {
@@ -8,7 +8,7 @@ const CartWidget = () => {
 
   return (
     <Link to="/cart">
-      <div>
+      <div className="cart-widget">
         {" "}
         {<FaCartPlus size={25} />} {totalQuantity}{" "}
       </div>{" "}
@@ -17,5 +17,3 @@ const CartWidget = () => {
 };
 
 export default CartWidget;
-
-//<div className="button"> {<FaCartPlus size={25} />} 1 </div>;

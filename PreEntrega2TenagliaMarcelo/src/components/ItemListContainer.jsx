@@ -42,12 +42,3 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
-
-// asyncFunc(categoriaId)
-//       .then((response) => {
-//         setProducts(response);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   }, [categoriaId]);

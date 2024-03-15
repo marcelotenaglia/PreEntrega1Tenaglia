@@ -38,13 +38,3 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer;
-
-// useEffect(() => {
-//   getProductById(itemId)
-//     .then((response) => {
-//       setProduct(response);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// }, [itemId]);
